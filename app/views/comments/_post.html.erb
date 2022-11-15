@@ -1,0 +1,45 @@
+
+            <% if comment.post.id == @post.id %>
+              <div class="d-flex align-items-start container_theme">
+                <%= image_tag("user.png", class:"user_comment_png")%>
+                <div>
+                  <div class="comment_email">
+                    <%= comment.user.email %> <br>
+                      <div id="comment-body-<%= comment.id %>" class="comment_content">
+                            <h6><span style="font-weight:700; background:lightgreen; border-radius:5px; padding:3px;">Message:</span> <%= comment.content %></h6>
+                                <h6><span style="font-weight:700; background:lightgreen; border-radius:5px; padding:3px;">Tasks:</span>
+                                    <ul>
+                                        <li style="list-style:inside; max-width:350px;"><%= comment.tasks %></li>
+                                    </ul>
+                                </h6>
+                                <h6><span style="font-weight:700; background:lightgreen; border-radius:5px; padding:3px;">Attachments:</span>
+                                <div>
+                                    <% comment.pictures.each do |picture|%>
+                                        <%= link_to image_tag(picture, style:"width:130px; height:120px; margin-top:10px;"), picture %>
+                                    <% end %>
+                                </div>
+                            </h6>
+                        </div>
+                        <hr>
+                    <% if current_user == comment.user %>
+                        <div class="btn-group float-end">
+                            <%= link_to "Edit", nil, remote: true, class:"btn btn-warning", 
+                            data: {
+                                controller: "comments",
+                                action: "comments#toggleForm",
+                                comments_form_param: "edit-form-#{comment.id}",
+                                comments_body_param: "comment-body-#{comment.id}"
+                            } %> 
+                            <%= button_to "Delete", [@post, comment], class:"btn btn-danger", method: :delete %>
+                        </div>
+                        <div id="edit-form-<%= comment.id%>" class="d-none">
+                            <%= render 'comments/form', 
+                            post: @post, 
+                            comment: comment,
+                            submit_label: "Update" %>
+                        </div>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            <% end %>

@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+*{
+  font-family: 'Montserrat', sans-serif;
+}
+body{
+    background: rgb(247, 240, 240);
+}
+.navbar{
+    background-color:blue;
+    color:#53ffff;
+
+}
+h1{
+  color:blue;
+}
+.navbar svg{
+  color:#fff;
+
+}
+#card_project{
+        background-color:rgba(100, 230, 253, 0.3);
+        color:#5effff;
+        position: relative;
+}
+  .input{
+    background:rgba(132, 248, 248, 0.2);
+    border: 1px solid #5effff;
+    color:#5effff;
+  }
+  
+  .button{
+      text-decoration:none;
+      text-transform:uppercase;
+      padding: 5px 10px;
+      border: 1px solid #fff;
+      background:rgba(132, 248, 248, 0.0);
+      font-size:14px;
+      border-radius:10px;
+      color:#fff;
+      font-family: 'Montserrat', sans-serif;
+      transition: 0.5s ease;
+  }
+  .button:hover{
+      color:#fff;
+      background:rgba(132, 248, 248, 0.2);
+  }
+  a{
+    text-decoration:none;
+    font-family: 'Montserrat', sans-serif;  
+    color:#000;
+    font-weight: 700;
+  }
+
+  .navbar_item{
+    text-decoration:none; 
+    color:#fff;
+    font-weight: 700;
+  }
+  .navbar_item:hover{
+    color:#5effff;
+  }
+  .nav_icon{
+    border:1px solid #fff;
+    color:#fff;
+    border-radius:5px;
+    background:none;
+    padding:5px 10px;
+  }
+  .nav_icon:hover{
+    border:1px solid #5effff;
+    color:#5effff;
+    background:rgba(132, 248, 248, 0.2);
+  }
+.posts_card{
+    padding-bottom:30px;
+}
+.user_png{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #111;
+}
+.user_comment_png{
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid #111;
+}
+.email{
+  margin-left: 10px;
+  font-size: 15px;
+  font-weight: 700;
+}
+.comment_email{
+  font-size: 15px;
+  font-weight: 700;
+  margin-left: 10px;
+}
+.comment_content{
+  padding-left: 20px;
+}
+.image_tag{
+  width: 30rem;
+  height: 32rem;
+  object-fit: cover;
+}
+.container_theme{
+  padding: 10px 15px;
+}
+.title_post{
+  font-weight: 700;
+}
+.btn_show{
+  font-size: 12px;
+}
+.back a,
+.back i{
+  transition: ease 0.5s;
+}
+.back:hover a,
+.back:hover i
+{
+  cursor: pointer;
+  color: #53ffff;
+}

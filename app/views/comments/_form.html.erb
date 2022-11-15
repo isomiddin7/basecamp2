@@ -1,0 +1,17 @@
+<%= form_with(model: [post, comment]) do |f|%>
+    <div class="form-group">
+        <%= f.label "Add Message", style:"display:block;" %>
+        <%= f.text_field :content, class:"form-control"  %>       
+    </div>
+    <div class="form-group">
+        <%= f.label "Add Task", style:"display:block;" %>
+        <%= f.text_field :tasks, class:"form-control"  %>       
+    </div>
+  <div class="form-group">
+    <%= f.label "Add Attachment" %>
+    <%= f.file_field :pictures, multiple:true, class:"form-control"  %>
+  </div>
+  <div class="d-flex justify-content-end">
+    <%= f.submit submit_label, class:"btn btn-primary mt-1" %> 
+  </div>
+<% end %>

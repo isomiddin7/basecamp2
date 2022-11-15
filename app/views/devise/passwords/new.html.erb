@@ -1,0 +1,93 @@
+<head>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+      *{
+        font-family: 'Montserrat', sans-serif;
+      }
+      #log_in{
+              background-color:rgba(100, 230, 253, 0.3);
+              color:#5effff;
+              position: relative;
+              animation: mymove 3s;
+      }
+      @keyframes mymove {
+          0%% {left: 30px; background-color:rgba(100, 230, 253, 0.0);}
+          25% {left: 22px; background-color:rgba(100, 230, 253, 0.075);}
+          50% { left:14px; background-color:rgba(100, 230, 253, 0.15);}
+          75% { left:6px; background-color:rgba(100, 230, 253, 0.22);}
+          100%% {left: 0px; background-color:rgba(100, 230, 253, 0.3);}
+      }
+      #myVideo{
+            position: fixed;
+            z-index: -1;
+            right: 0;
+            bottom: 0;
+        }
+        .input{
+          background:rgba(132, 248, 248, 0.2);
+          border: 1px solid #5effff;
+          color:#5effff;
+        }
+        @media (min-aspect-ratio: 16/9){
+            #myVideo{
+                width: 100%;
+                height: auto;
+            }
+        }
+        @media (max-aspect-ratio: 16/9){
+            #myVideo{
+                width: auto;
+                height: 100%;   
+            }
+        }
+        
+        .button{
+            text-decoration:none;
+            text-transform:uppercase;
+            padding: 5px 15px;
+            border: 1px solid #5effff;
+            background:rgba(132, 248, 248, 0.0);
+            font-size:12px;
+            border-radius:10px;
+            color:#5effff;
+            font-family: 'Montserrat', sans-serif;
+            transition: 0.5s ease;
+        }
+        .button:hover{
+            color:#fff;
+            background:rgba(132, 248, 248, 0.2);
+        }
+        a{
+          text-decoration:none;
+          font-family: 'Montserrat', sans-serif;  
+          color:#5effff;
+        }
+        a:hover{
+          color:lightblue;
+        }
+  </style>
+</head>
+<div style="width:100%; display:flex; align-items:center; height:100vh; justify-content:center"> 
+  <div id="log_in" class="col-3 card p-3 d-flex justify-content-center">
+  <div>
+<h2>Forgot your password?</h2>
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control input" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Send me reset password instructions", class:"button mt-3" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+<%= video_tag "signupfon.mp4", autoplay: :autoplay, loop: :loop, id:"myVideo", class:"myVideo", style:"position: fixed; z-index: -1; right: 0; bottom: 0;" %>
+
+    </div>
+  </div>
+</div>

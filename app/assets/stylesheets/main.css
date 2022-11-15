@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Times New Roman", Times, serif;
+
+}
+
+#myVideo{
+    position: fixed;
+    z-index: -1;
+
+}
+@media (min-aspect-ratio:16/9){
+    #myvideo{
+        width: 100%;
+        height: auto;
+    }
+}
+@media (max-aspect-ratio:16/9){
+    #myvideo{
+        width: auto;
+        height: 100%;
+    }
+}
+
+#project{
+    background: rgb(146, 141, 141);
+    color: #343a40;
+}
+.show_opinion{
+    padding: 10px 30px;
+    background: #94989c;
+    border-radius: 10px;
+}
+.card_project{
+    color: #000;
+    padding:10px;
+    width: 200px;
+    
+}
+.show_pro{
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    border: 0 0 5px 5px;
+}
+#card_show{
+    background: #343a40;
+    color:#fff
+}
+.project_name{
+    background:#343a40 ;
+    top: 0;
+    width: 100%;
+    color: #fff;
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.post{
+    padding: 0;
+    width: 200px;
+    height: 150px;
+    margin: 0;
+}
+li{
+    list-style: none;
+}
+h1 {
+    font-family: Impact, Charcoal, sans-serif;
+    color: #343a40;
+    font-size: 2rem;
+    line-height: 1.2;
+}
+

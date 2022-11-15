@@ -1,0 +1,21 @@
+<div class="posts_card card m-3" id="<%= dom_id post %>">
+      <div class="d-flex align-items-center container_theme">
+        <%= image_tag("user.jpg", class:"user_png")%>
+            <% @users.each do |user| %>
+                <% if post.user_id  == user.id %>
+                   <h5 class="email"><%= user.email %></h5>
+                <% end %>
+            <% end %>
+      </div>
+          <%= image_tag(post.image , class:"image_tag")%>
+      <div class=" p-2">
+        <div class="d-flex align-items-center f-start">
+          <p class="title_post"><%= post.title%> &nbsp</p>
+          <p class="description_post"><%= post.description %></p>
+        </div>
+        <p class="card-text"><i class="fa-regular fa-eye"></i> <%= post.views %> views</p>
+      </div>
+      <div class="d-flex align-items-center justify-content-end p-2">
+          <%= link_to "Show this post", post , class:"btn btn-primary btn_show"%>
+      </div>
+</div>
